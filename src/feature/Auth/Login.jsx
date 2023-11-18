@@ -75,7 +75,7 @@ const Login = () => {
 
       //check user....
       const users = JSON.parse(localStorage.getItem("users"));
-      if (users.length == 0) {
+      if (!users) {
         Popup("user not registerd", "error", "red", "white");
       } else {
         const check = users.filter((user) => user.email === data.email);
