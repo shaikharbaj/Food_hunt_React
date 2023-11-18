@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* :root {
+    --header-bg-color: rgb(255, 255, 255);
+    --footer-bg-color: rgb(255, 255, 255);
+    --body-bg-color: #e3e3e3;
+    --input-bg: #f2f2f2;
+    --input-bg-focus: #dbdbdb;
+    --text-color: #000;
+    --light-text-color: #545454;
+    --light-text-title: #353535;
+    --light-green: #00ad1d;
+    --dark-green: #016034;
+    --orange: #d97919;
+    --light-orange: #ffaf60;
+    --dark-orange: #c26100;
+    --x-dark-orange: rgb(157, 42, 1);
+    --light-red: rgb(236, 56, 56);
+    --white: #fff;
+    --light-white-text: #eaeaea;
+    --light-black: rgb(23, 23, 23);
+    --light-blue: #0463ac;
+    --dark-blue: #070062;
+  }
+  nav {
+    height: 70px;
+    background-color: rebeccapurple;
+  } */
+  /* .restaurant-menu {
+      margin-top: 80px;
+      min-height: 80vh;
+      width: auto;
+    } */
+  
+  .restaurant-summary {
+    display: flex;
+    width: 100%;
+    /* height: 200px; */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(23, 23, 23);
+    color: #eaeaea;
+    overflow-y: hidden;
+  }
+  
+  .restaurant-img {
+    width: 250px;
+    height: 170px;
+    border-radius: 5px;
+  }
+  
+  .restaurant-summary-details {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 520px;
+    margin: 20px;
+  }
+  
+  .restaurant-title {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    max-width: 540px;
+    font-weight: 500;
+    margin-top: 5px;
+  }
+  
+  .restaurant-tags {
+    white-space: nowrap;
+    color: inherit;
+    opacity: 0.7;
+    font-size: 15px;
+    max-width: 540px;
+  }
+  
+  .restaurant-details {
+    display: flex;
+    font-family: initial;
+    margin-top: 18px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    color: inherit;
+    font-size: 16px;
+    max-width: 340px;
+  }
+  
+  .restaurant-rating {
+    display: flex;
+    align-items: center;
+    padding: 5px 8px;
+    gap: 5px;
+    background-color: #016034;
+    border-radius: 5px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .restaurant-summary {
+      padding-left: 1rem;
+    }
+  
+    .restaurant-img {
+      width: 130px;
+      height: 120px;
+      border-radius: 5px;
+    }
+    .restaurant-title {
+      font-size: 25px;
+      font-weight: 500;
+    }
+  
+    .restaurant-tags {
+      margin-bottom: 0;
+    }
+  
+    .restaurant-details {
+      font-size: 14px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .restaurant-summary {
+      padding-left: 1rem;
+    }
+  
+    .restaurant-img {
+      width: 130px;
+      height: 120px;
+      border-radius: 5px;
+    }
+    .restaurant-title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  
+    .restaurant-tags {
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+  
+    .restaurant-details {
+      font-size: 12px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .restaurant-summary {
+      padding-left: 0.2rem;
+    }
+    .restaurant-summary-details {
+      margin: 10px;
+    }
+    .restaurant-img {
+      width: 110px;
+      height: 100px;
+      border-radius: 5px;
+    }
+    .restaurant-title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+  
+    .restaurant-tags {
+      margin-bottom: 0;
+      font-size: 12px;
+    }
+  
+    .restaurant-details {
+      font-size: 10px;
+    }
+  }
+  
+  /* accordian menu  */
+
+  
+  .accordion-body .menu {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.8rem 1rem;
+    justify-content: space-between;
+  }
+  
+  .left .icon {
+    font-size: 18px;
+  }
+  .left .menu-title {
+    margin-right: 4px;
+    font-size: 1.22rem;
+    font-weight: 500;
+    color: #3e4152;
+    word-break: break-word;
+    margin-bottom: 0;
+  }
+  .left .price {
+    font-size: 1rem;
+    margin-top: 2px;
+    color: #3e4152;
+    margin-bottom: 0;
+    margin-right: 4px;
+  }
+  .left .description {
+    margin-top: 4px;
+    margin-right: 4px;
+    margin-bottom: 0;
+    color: rgba(40, 44, 63, 0.45);
+    font-size: 0.875rem;
+  }
+  
+  .right {
+    min-width: 118px;
+    margin-left: 16px;
+  }
+  .right .img {
+    position: relative;
+  }
+  .right .img img {
+    width: 118px;
+    height: 96px;
+    border-radius: 6px;
+  }
+  .img button {
+    position: absolute;
+    left: 20%;
+    border: 1px solid #00ad1d;
+    padding: 0.2rem 0.7rem;
+    border-radius: 7px;
+    bottom: -12%;
+    color: #00ad1d;
+    font-weight: 500;
+    background-color: #fff;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .accordion-body {
+      padding: 0.3rem 0.5rem;
+    }
+  
+    .left .icon {
+      font-size: 18px;
+    }
+    .left .menu-title {
+      font-size: 1rem;
+    }
+    .left .price {
+      font-size: 0.875rem;
+    }
+
+    .img button {
+      padding: 0.2rem 0.5rem;
+      
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .left .icon {
+      font-size: 18px;
+    }
+    .left .menu-title {
+      font-size: 1rem;
+    }
+    .left .price {
+      font-size: 0.875rem;
+    }
+    .left .description {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      /* truncate to 4 lines */
+      -webkit-line-clamp: 4;
+      margin-top: 2px;
+      font-size: 0.768rem;
+    }
+    .img button {
+      padding: 0.2rem 0.5rem;
+      
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .left .menu-title {
+      font-size: 0.8rem;
+    }
+    .left .price {
+      font-size: 0.7rem;
+    }
+    .left .description {
+      font-size: 0.566rem;
+      margin-top: 2px;
+    }
+    .right .img img {
+      width: 100px;
+      height: 90px;
+    }
+    .img button {
+      padding: 0.1rem 0.3rem;
+      font-size: 13px;
+    }
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .accordion-body {
+      padding: 0.3rem 0.5rem;
+    }
+  
+    .left .icon {
+      font-size: 18px;
+    }
+    .left .menu-title {
+      font-size: 1rem;
+    }
+    .left .price {
+      font-size: 0.875rem;
+    }
+
+    .img button {
+      padding: 0.2rem 0.5rem;
+      
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .left .icon {
+      font-size: 18px;
+    }
+    .left .menu-title {
+      font-size: 1rem;
+    }
+    .left .price {
+      font-size: 0.875rem;
+    }
+    .left .description {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      /* truncate to 4 lines */
+      -webkit-line-clamp: 4;
+      margin-top: 2px;
+      font-size: 0.768rem;
+    }
+    .img button {
+      padding: 0.2rem 0.5rem;
+     
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .left{
+       width: 50%;
+    }
+    .right{
+      width: 50%;
+    }
+
+  }
+  

@@ -1,0 +1,103 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+}
+
+  /* google font   */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+  
+  /*  variable css...............*/
+  :root {
+    --header-height: 3rem;
+    /*  color mode HSL   (hue saturation lightness)*/
+    --hue: 0;
+    --sat: 0%;
+    --title-color: hsl(var(--hue), var(--sat), 20%);
+    --title-color-dark: hsl(var(--hue), var(--sat), 0%);
+    --text-color: hsl(var(--hue), var(--sat), 46%);
+    --body-color: hsl(var(--hue), var(--sat), 98%);
+    --container-color: #fff;
+    --header-bg-color: rgb(255, 255, 255);
+  --footer-bg-color: rgb(255, 255, 255);
+  --body-bg-color: #e3e3e3;
+  --input-bg: #f2f2f2;
+  --input-bg-focus: #dbdbdb;
+  --text-color: #000;
+  --light-text-color: #545454;
+  --light-text-title: #353535;
+  --light-green: #00ad1d;
+  --dark-green: #016034;
+  --orange: #d97919;
+  --light-orange: #ffaf60;
+  --dark-orange: #c26100;
+  --x-dark-orange: rgb(157, 42, 1);
+  --light-red: rgb(236, 56, 56);
+  --white: #fff;
+  --light-white-text: #eaeaea;
+  --light-black: rgb(23, 23, 23);
+  --light-blue: #0463ac;
+  --dark-blue: #070062;
+  
+    /*.............  font and Typography .................*/
+    --body-font: "Poppins", sans-serif;
+  
+    /* .5rem = 8px | 1 rem =16px*/
+    --big-font-size: 3.5rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.813rem;
+    --tiny-font-size: 0.625rem;
+  
+    /* font weight*/
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+  }
+  
+  /* responsive typography*/
+  @media screen and (max-width:992px){
+        :root{
+          --big-font-size:2.75rem;
+          --h1-font-size:1.5rem;
+          --h2-font-size:1.25rem;
+          --h3-font-size:1rem;
+          --normal-font-size:0.938rem;
+          --small-font-size:0.813rem;
+          --smaller-font-size:0.75rem;
+        }
+  }
+html {
+    scroll-behavior: smooth;
+  }
+  body{
+         background-color: var(--body-color);
+         padding-top: 70px;
+         width: 100%;
+  }
+  .body{
+        min-height: calc(100vh - 70px - 50px);
+  }
+  body,
+  button,
+  input,
+  textarea {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+  }
+  ul {
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+  }

@@ -1,0 +1,156 @@
+.profile{
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+}
+.profile .image{
+   
+        width: 160px;
+        height: 160px;
+        margin: auto;
+        border-radius: 50%; /*don't forget prefixes*/
+        background-image: url("../../assets/WhatsApp Image 2023-11-18 at 2.48.17 PM.jpeg");
+        background-position: center center;
+        /* as mentioned by Vad: */
+        background-size: cover;
+   
+}
+.profile_btn{
+         width: 150px;
+         background:  rgb(2, 6, 12);
+         color: white;
+        border: 1px solid black;
+        padding: .3rem .4rem;
+        border-radius: 3px;
+        font-weight: 400;
+        margin-bottom: 1rem;
+}
+.profile_intro{
+       text-align: center;
+       box-shadow: 0px -1px 9px -2px rgba(0,0,0,.71);
+       padding: 2rem 1rem;
+       width: 450px;
+       background-color: #fff;
+}
+.profile_intro .heading{
+        font-size: 1.75rem;
+        font-weight: bolder;
+}
+.profile_intro .skills{
+    width: 95%;
+    margin-top: 1rem;
+    margin-bottom: .7rem;
+    /* margin: auto; */
+    font-weight: bold;
+}
+
+.profile_intro .skills .skill{
+        font-size: 1rem;
+        
+}
+.profile_intro .skills .bar{
+       margin-right: .4rem;
+}
+.profile_intro img{
+        border: 5px solid black;
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        padding: .6rem;
+        
+        
+}
+
+@media screen and (max-width:576px)
+{
+    .profile_intro{
+       width: 90%;
+        
+ }
+ .profile_intro .skills{
+      height: auto;
+      word-wrap:break-word;
+}
+
+}
+
+
+.social_media ul {
+       display: flex;
+       justify-content: space-evenly;
+       padding-left: 0;
+       flex-wrap: wrap;
+
+}
+.social_media ul li{
+        /* border: 2px solid black; */
+        height: 2.9rem;
+        width: 2.9rem;
+        border-radius: 50%;
+}
+.social_media ul li a{
+       font-size: 2rem;
+       /* color: white; */
+       /* width: 100%;
+       height: 100%; */
+}
+.github a{
+      color: white;
+}
+.github {
+       background-color: black;
+}
+.linkedin a{
+    color: white;
+}
+.linkedin {
+     background-color: blue;
+}
+
+.gmail a{
+    color: white;
+}
+.gmail {
+     background-color: red;
+}
+
+.whatsapp a{
+    color: white;
+}
+.whatsapp {
+     background-color: green;
+}
+
+
+
+
+
+.about{
+   display: flex;
+   flex-direction: column;    
+   align-items: center;
+   min-width: 90%;
+   /* height: calc(100vh - 70px - 55px); */
+   padding-top: 2rem;
+}
+.about img{
+    width: 450px;
+    /* height: 100%; */
+}
+.about h3{
+        margin-top: 2rem;
+        margin-bottom:1rem;
+        font-size: 1.5rem;
+}
+.about p{
+    text-align: center;
+    font-size: 1rem;
+    width: 90%;
+    margin-bottom: 3rem;
+    max-width: 480px;
+    /* margin: auto; */
+}
+

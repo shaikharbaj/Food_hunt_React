@@ -1,0 +1,36 @@
+.page_404 {
+  padding: 40px 0;
+  background: #fff;
+  /* text-align: center; */
+}
+
+.page_404 img {
+  width: 100%;
+}
+
+.four_zero_four_bg {
+  background-image: url('../../assets/connection_lost.gif');
+  height: 400px;
+  background-position: center;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.contant_box_404 h3 {
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600 !important;
+}
+
+.link_404 {
+  color: #fff !important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+.contant_box_404 {
+  margin-top: -50px;
+}

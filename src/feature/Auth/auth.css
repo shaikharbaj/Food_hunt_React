@@ -1,0 +1,32 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.h-custom {
+min-height: calc(100vh - 70px - 50px);
+display: flex;
+align-items: center;
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+.btn-login{
+         background-color: black;
+         color: white;
+}
+
+.error{ 
+       color: red;
+       font-size: .786rem;
+       padding-left: .4rem;
+}
+
+.btn-login:hover{
+         color: white;
+}

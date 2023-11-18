@@ -1,0 +1,118 @@
+.error_wrapper{
+       min-height: calc(100vh - 70px);
+}
+.error_header {
+    min-height: 50px;
+  }
+  
+  .head-text {
+    text-transform: uppercase;
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    font-weight: bold;
+  }
+  
+  .head-text, .main-wrapper {
+    width: 80%;
+    margin: auto;
+  }
+  
+  .main-wrapper {
+    display: flex;
+  }
+  
+  .scarecrow-img img {
+    width: 90%;
+    height: auto;
+  }
+  
+  .error-text {
+    width: 100%;
+  }
+  
+  .error-text h2 {
+    width: 90%;
+    font-size: 2.5rem;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color:  rgba(0, 0, 0, 0.6);
+  }
+  
+  .error-text p {
+    width: 50%;
+    padding: 5px;
+  }
+  
+  .error_page_btn {
+    cursor: pointer;
+    width: auto;
+    /* padding: 15px; */
+    padding: .6rem .8rem;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: white;
+    background-color: #333;
+    text-transform: uppercase;
+    margin-top: .875rem;
+    margin-bottom: .875rem;
+  }
+  
+  /* star mobile-first media queries */
+  
+  /* Small devices (landscape phones, 576px and up) */
+  
+  
+  /* Medium devices (tablets, 768px and up) */
+  @media (max-width: 991.9px) { 
+    .error_wrapper{
+             width: 60%;
+             margin: auto;
+    }
+    .main-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .error-text h2 {
+      width: 100%;
+      font-size: 2rem;
+      line-height: 100%;
+      padding-top: 15px;
+    }
+  
+    .error-text p {
+      width: 100%;
+      font-size: 0.8rem;
+      line-height: 150%;
+      padding-top: 15px;
+    }
+  }
+  
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) { 
+    .error_wrapper{
+           width: 100%;
+    }
+    .error-text h2 {
+      width: 100%;
+      line-height: 100%;
+      padding-top: 15px;
+    }
+  
+    .error-text p {
+      width: 100%;
+      line-height: 150%;
+      padding-top: 15px;
+    }
+  }
+
+  @media (max-width:576px)
+  {
+     .error_wrapper{
+           width: 100%;
+     }
+  }
+  
