@@ -40,17 +40,17 @@ const About = () => {
              <ul>
                <li className="linkedin">
                  <a href="https://www.linkedin.com/in/arbaj-dilip-shaikh/">
-                   <i class="bx bxl-linkedin-square"></i>
+                   <i className="bx bxl-linkedin-square"></i>
                  </a>
                </li>
                <li className="github">
                  <a href="https://github.com/shaikharbaj">
-                   <i class="bx bxl-github"></i>
+                   <i className="bx bxl-github"></i>
                  </a>
                </li>
                <li className="gmail">
                  <a href="mailto:shaikharbaj2001@gmail.com">
-                   <i class="bx bxl-gmail"></i>
+                   <i className="bx bxl-gmail"></i>
                  </a>
                </li>
              </ul>

@@ -3,7 +3,7 @@ import './Header.css'
 import { Link } from 'react-router-dom'
 import { cartItemSelector } from '../../store/slices/cartSlice'
 import useOnline from '../../Hooks/useOnline'
-import { logout, userSelector } from '../../store/slices/userAuthSlice'
+import { logout} from '../../store/slices/userAuthSlice'
 import { useDispatch, useSelector } from 'react-redux'
 const Header = () => {
   const cartItem = cartItemSelector();
@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container-fluid">
         <div className="brand">
           <span className='logo'>🍔</span>
-          <a className="navbar-brand" href="#">FoodHunt <span className='online_status'>{online?<i class='bx bx-radio-circle active'></i>:<i class='bx bx-radio-circle deactive'></i>}</span></a>
+          <a className="navbar-brand" href="#">FoodHunt <span className='online_status'>{online?<i className='bx bx-radio-circle active'></i>:<i className='bx bx-radio-circle deactive'></i>}</span></a>
         </div>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@ const Header = () => {
           <ul className="navbar-nav ms-auto">
             {
                 loggedUser && <li className="nav-item">
-                <Link className="nav-link user_link" onClick={(e)=>e.preventDefault()}><i class='bx bxs-user-check'></i>{loggedUser?.name}</Link>
+                <Link className="nav-link user_link" onClick={(e)=>e.preventDefault()}><i className='bx bxs-user-check'></i>{loggedUser?.name}</Link>
               </li>
             }
             <li className="nav-item">

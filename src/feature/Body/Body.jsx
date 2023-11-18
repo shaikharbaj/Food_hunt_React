@@ -70,8 +70,11 @@ const Body = () => {
     }
   };
 
-  const SearchText=(event)=>{
-    setSearchText(event.target.value);
+  const SearchText=(e)=>{
+    if(e.target.value.length===0){
+         setFilteredRestaurants(allRestaurants);
+    }
+    setSearchText(e.target.value);
   }
   return (
     <div className="container-fluid">
