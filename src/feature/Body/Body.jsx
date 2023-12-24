@@ -3,6 +3,7 @@ import { swiggy_api_URL, IMG_CDN_URL } from '../../constant';
 import './body.css';
 import { RestaurantListShimmer } from '../../Components/Shimmers/Shimmer';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 const Body = () => {
   // useState: To create a state variable, searchText, allRestaurants and filteredRestaurants is local state variable
   const [searchText, setSearchText] = useState("");
@@ -17,33 +18,23 @@ const Body = () => {
   }, []);
 
 
+
   // async function getRestaurant to fetch Swiggy API data
   async function getRestaurants() {
 
     try {
-      const response = await fetch(swiggy_api_URL);
-      const json = await response.json();
-      // initialize checkJsonData() function to check Swiggy Restaurant data
-      async function checkJsonData(jsonData) {
-        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
-          // initialize checkData for Swiggy Restaurant data
-          let checkData =
-            json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle
-              ?.restaurants;
-
-          // if checkData is not undefined then return it
-          if (checkData !== undefined) {
-            return checkData;
-          }
-        }
+      const address = {
+        latitude: 28.6667,
+        longitude: 77.2167,
       }
-
-      // call the checkJsonData() function which return Swiggy Restaurant data
-      const resData = await checkJsonData(json);
-
-      // update the state variable restaurants with Swiggy API data
-      setAllRestaurants(resData);
-      setFilteredRestaurants(resData);
+      const respone = await axios.post(swiggy_api_URL, address);
+      const data = await respone.data;
+      const res = data?.data?.cards.filter(
+        (items) => items?.card?.card?.id === 'restaurant_grid_listing'
+      )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      console.log(res);
+      setAllRestaurants(res);
+      setFilteredRestaurants(res);
     } catch (error) {
       console.log(error);
     }
@@ -70,9 +61,9 @@ const Body = () => {
     }
   };
 
-  const SearchText=(e)=>{
-    if(e.target.value.length===0){
-         setFilteredRestaurants(allRestaurants);
+  const SearchText = (e) => {
+    if (e.target.value.length === 0) {
+      setFilteredRestaurants(allRestaurants);
     }
     setSearchText(e.target.value);
   }
@@ -113,41 +104,41 @@ const Body = () => {
                 allRestaurants.length === 0 ? <RestaurantListShimmer /> : <>
                   {
                     filteredRestaurants.length === 0 ? <h1>No restaurant found</h1> : filteredRestaurants.map((restaurant, index) => {
-                      return  <Link to={`/restaurant/${restaurant?.info?.id}`} key={restaurant?.info?.id}>
-                           <div className="place">
-                        <div className="list-item">
-                          <div className="item-content">
-                            <div className="top-img">
-                              <img className="_2tuBw _12_oN" alt="La Pino'z Pizza"
-                                src={IMG_CDN_URL + restaurant?.info?.cloudinaryImageId
-                                }
-                                width="254" height="160" />
-                            </div>
-
-                            <div className="place-name-div">
-                              <div className="name">{restaurant?.info?.name}</div>
-                              <div className="food-items">
-                                {restaurant?.info?.cuisines.join(", ")}</div>
-                            </div>
-                            <div className="info-div">
-                              <div className="rating">
-                                <span className="icon-star"><i className='bx bxs-star'></i></span>
-                                <span>{restaurant?.info?.avgRating}</span>
+                      return <Link to={`/restaurant/${restaurant?.info?.id}`} key={restaurant?.info?.id}>
+                        <div className="place">
+                          <div className="list-item">
+                            <div className="item-content">
+                              <div className="top-img">
+                                <img className="_2tuBw _12_oN" alt="La Pino'z Pizza"
+                                  src={IMG_CDN_URL + restaurant?.info?.cloudinaryImageId
+                                  }
+                                  width="254" height="160" />
                               </div>
-                              <div>•</div>
-                              <div>{restaurant?.info?.sla?.slaString}</div>
-                              <div>•</div>
-                              <div className="price">{restaurant?.info?.costForTwo}</div>
-                            </div>
-                            <div className="location">
-                              <p>{restaurant?.info?.areaName}</p>
+
+                              <div className="place-name-div">
+                                <div className="name">{restaurant?.info?.name}</div>
+                                <div className="food-items">
+                                  {restaurant?.info?.cuisines.join(", ")}</div>
+                              </div>
+                              <div className="info-div">
+                                <div className="rating">
+                                  <span className="icon-star"><i className='bx bxs-star'></i></span>
+                                  <span>{restaurant?.info?.avgRating}</span>
+                                </div>
+                                <div>•</div>
+                                <div>{restaurant?.info?.sla?.slaString}</div>
+                                <div>•</div>
+                                <div className="price">{restaurant?.info?.costForTwo}</div>
+                              </div>
+                              <div className="location">
+                                <p>{restaurant?.info?.areaName}</p>
+                              </div>
                             </div>
                           </div>
-                        </div>
 
-                      </div>
+                        </div>
                       </Link>
-                      
+
                     })
                   }
                 </>
