@@ -15,6 +15,7 @@ const Body = () => {
   // use useEffect for one time call getRestaurants using empty dependency array
   useEffect(() => {
     getRestaurants();
+
   }, []);
 
 
@@ -88,16 +89,18 @@ const Body = () => {
       <main className="main-container">
         <section className="restaurants">
           <div className="container-fluid">
-            <div className="item-bar">
-              <div className="number">{filteredRestaurants.length} restaurants</div>
-              <div className="filters">
-                {/* <!-- <div className="relevance">Relevance</div>
-                <div className="delivery">Delivery Time</div>
-                <div className="rating">Rating</div>
-                <div className="cost-lh">Cost: Low to High</div>
-                <div className="cost-hl">Cost: High to Low</div> --> */}
-              </div>
-            </div>
+            {
+                filteredRestaurants?.length>0 ?<div className="item-bar">
+                <div className="number">{filteredRestaurants.length} restaurants</div>
+                <div className="filters">
+                  {/* <!-- <div className="relevance">Relevance</div>
+                  <div className="delivery">Delivery Time</div>
+                  <div className="rating">Rating</div>
+                  <div className="cost-lh">Cost: Low to High</div>
+                  <div className="cost-hl">Cost: High to Low</div> --> */}
+                </div>
+              </div>:<></>
+            }
             <div className="restaurant-list">
 
               {

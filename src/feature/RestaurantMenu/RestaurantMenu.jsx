@@ -8,7 +8,7 @@ import { RestaurantMenuShimmer } from '../../Components/Shimmers/Shimmer'
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resInfo,menuItem] = useRestaurantMenu(id);
-  
+  console.log(resInfo);
  if(!(resInfo && menuItem))
  {
      return <RestaurantMenuShimmer/>
@@ -28,7 +28,7 @@ const RestaurantMenu = () => {
               <span><i className='bx bxs-star me-1'></i>{resInfo?.avgRating}</span>
             </div>
             <div className="restaurant-rating-slash">|</div>
-            <div>{resInfo?.sla?.slaString}</div>
+            <div>{resInfo?.totalRatingsString}</div>
             <div className="restaurant-rating-slash">|</div>
             <div>{resInfo?.costForTwoMessage}</div>
           </div>
