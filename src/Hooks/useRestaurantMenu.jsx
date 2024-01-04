@@ -1,7 +1,7 @@
 import {swiggy_api_URL, RESTAURANT_TYPE_KEY } from '../constant'
 import axios from 'axios';
 import { useState, useEffect } from 'react'
-import RESTAURANT_MENU from '../utils/RestaurantMenu.js'
+import RESTAURANT_MENU from '../utils/RestaurantMenu.jsx'
 const useRestaurantMenu = (id) => {
     const [resInfo, setResInfo] = useState(null);
     const [menuItem, setMenuItem] = useState([]);
