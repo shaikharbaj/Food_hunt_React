@@ -3,6 +3,7 @@ import { swiggy_api_URL, IMG_CDN_URL } from '../../constant';
 import './body.css';
 import { RestaurantListShimmer } from '../../Components/Shimmers/Shimmer';
 import { Link } from 'react-router-dom';
+import RestaurantList from '../../utils/RestaurantArray';
 import axios from 'axios';
 const Body = () => {
   // useState: To create a state variable, searchText, allRestaurants and filteredRestaurants is local state variable
@@ -24,12 +25,22 @@ const Body = () => {
   async function getRestaurants() {
 
     try {
-      const address = {
-        latitude: 28.6667,
-        longitude: 77.2167,
-      }
-      const respone = await axios.post(swiggy_api_URL, address);
-      const data = await respone.data;
+      // const address = {
+      //   latitude: 28.6667,
+      //   longitude: 77.2167,
+      // }
+      // const respone = await axios.post(swiggy_api_URL, address);
+      // const data = await respone.data;
+      // const res = data?.data?.cards.filter(
+      //   (items) => items?.card?.card?.id === 'restaurant_grid_listing'
+      // )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      // console.log(res);
+      // setAllRestaurants(res);
+      // setFilteredRestaurants(res);
+
+      //modification>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+      const data = RestaurantList;
       const res = data?.data?.cards.filter(
         (items) => items?.card?.card?.id === 'restaurant_grid_listing'
       )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
