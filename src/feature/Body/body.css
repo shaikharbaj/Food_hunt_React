@@ -241,12 +241,13 @@
     font-weight: 400;
   }
   .info-div .rating {
-    background-color: #db7c38;
+    background-color: green;
     color: #fff;
     height: 20px;
     width: 42px;
     padding: 0 5px;
     font-weight: 400;
+    /* padding-right: .8rem; */
     display: flex;
     align-items: center;
     border-radius: 2px;

@@ -191,6 +191,12 @@
   .left .icon {
     font-size: 18px;
   }
+  .left .veg{
+       color: green;
+  }
+  .left .nonveg{
+    color: red;
+  }
   .left .menu-title {
     margin-right: 4px;
     font-size: 1.22rem;
