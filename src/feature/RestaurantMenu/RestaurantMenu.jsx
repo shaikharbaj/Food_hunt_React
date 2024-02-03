@@ -8,7 +8,6 @@ import { RestaurantMenuShimmer } from '../../Components/Shimmers/Shimmer'
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [resInfo,menuItem] = useRestaurantMenu(id);
-  console.log(resInfo);
  if(!(resInfo && menuItem))
  {
      return <RestaurantMenuShimmer/>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState,useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./auth.css";
 import LoginImage from "../../assets/undraw_Eating_together_re_ux62 (1).png";
 import { useDispatch, useSelector } from "react-redux";
@@ -7,6 +7,7 @@ import { login } from "../../store/slices/userAuthSlice";
 import toast, { Toaster } from "react-hot-toast";
 const Login = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
   const toastId=useRef(null);
   const loggeduser = useSelector((state) => state.user.loggedUser);
   const navigate = useNavigate();
@@ -62,6 +63,8 @@ const Login = () => {
   };
   const SubmitHandler = (event) => {
     event.preventDefault();
+    const { state } = location;
+    const redirectPath = state?.from || '/';
     const errors = checkValidation();
     if (Object.keys(errors).length > 0) {
       setError(errors);
@@ -86,7 +89,7 @@ const Login = () => {
           if (check[0].password === data.password) {
             dispatch(login(check[0]));
             Popup("user logged in successfully", "success", "#00ad1d", "white");
-            navigate("/");
+            navigate(redirectPath);
           } else {
 
             Popup("Invalid credentials", "error", "red", "white");

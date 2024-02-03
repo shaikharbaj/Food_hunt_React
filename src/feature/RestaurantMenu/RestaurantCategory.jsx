@@ -12,7 +12,7 @@ const RestaurantCategory = (props) => {
     const id = props.title.split(" ")[0]+Math.floor(Math.random() * Date.now()).toString(36);
 
     
-    console.log(props.itemCards[0].card.info?.isVeg);
+   
     const toastId=useRef(null);
    
     const INCREMENTQUANTITY = (item) => {

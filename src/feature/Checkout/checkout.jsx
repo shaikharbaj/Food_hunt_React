@@ -89,7 +89,7 @@ const Checkout = () => {
     const submithandler = (e) => {
         e.preventDefault();
         const checkerror = checkValidation();
-        console.log(checkerror)
+       
         if (Object.keys(checkerror).length > 0) {
             setError(checkerror);
         } else {
@@ -111,7 +111,7 @@ const Checkout = () => {
                   showConfirmButton: false,
                   timer: 1500
                 }).then(()=>{
-                    navigate("/");
+                    navigate("/",{replace:true});
                 });
 
                 

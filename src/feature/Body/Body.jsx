@@ -44,7 +44,7 @@ const Body = () => {
       const res = data?.data?.cards.filter(
         (items) => items?.card?.card?.id === 'restaurant_grid_listing'
       )[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-      console.log(res);
+
       setAllRestaurants(res);
       setFilteredRestaurants(res);
     } catch (error) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState,useRef } from 'react'
 import { IMG_CDN_URL } from '../../constant';
 import imagenotfound from '../../assets/no-image.png'
 import './cart.css'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import EmptyCart from './EmptyCart';
 import { cartItemSelector, decrementQuantity, incrementQuantity, removeFromCart } from '../../store/slices/cartSlice';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
 const Cart = () => {
   const cartItem = cartItemSelector();
+  const navigate = useNavigate();
   const loggedUser = useSelector((state)=>state?.user?.loggedUser);
   const [Total, setTotal] = useState(0);
   const [totalQuantity, setTotalQuantity] = useState(0);
@@ -60,6 +61,11 @@ const Cart = () => {
            dismiss();
        }
        notify();
+  }
+
+  const gotohome=(e)=>{
+       e.preventDefault(); 
+       navigate("/",{replace:true});
   }
   useEffect(() => {
     GetGrandTotal();
@@ -151,7 +157,7 @@ const Cart = () => {
                   <div className="mt-3">
                     <Link to={"/checkout"} className="btn btn-checkout w-100 shadow-0 mb-2">{loggedUser ?"Checkout":"sign in before checkout"}</Link>
                     
-                    <Link to={"/"} className="btn btn-light w-100 border mt-2"> Back to Home </Link>
+                    <a onClick={gotohome} className="btn btn-light w-100 border mt-2"> Back to Home </a>
                   </div>
                 </div>
               </div>

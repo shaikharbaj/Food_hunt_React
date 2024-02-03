@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Navigate } from 'react-router-dom';
+import { Route, Navigate, useLocation } from 'react-router-dom';
 
 
 const isAuthenticated = () => {
@@ -14,9 +14,11 @@ const isAuthenticated = () => {
 };
 const ProtectedRoute = ({ children })=> {
     const user = useSelector((state)=>state?.user?.loggedUser);
+    const location = useLocation();
+    console.log(location);
   
     if (!user) {
-      return <Navigate to="/login" replace={true}></Navigate>;
+      return <Navigate to="/login" state={{from:location}}  replace={true}></Navigate>;
     }
     return children;
   }

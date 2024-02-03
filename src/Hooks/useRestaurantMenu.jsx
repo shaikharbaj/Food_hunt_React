@@ -26,7 +26,7 @@ const useRestaurantMenu = (id) => {
             
             
         } catch (error) {
-            console.log(error)
+           
             setResInfo(null);
             setMenuItem([]);
         }
