@@ -173,6 +173,12 @@
     align-self: stretch;
     margin-top: 1rem;
   }
+
+  .restaurant_img{
+        width: 254px !important;
+        height: 160px;
+        object-fit: cover;
+  }
   
   .restaurant-list .place-link {
     background: #fff;

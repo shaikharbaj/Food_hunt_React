@@ -123,7 +123,7 @@ const Body = () => {
                           <div className="list-item">
                             <div className="item-content">
                               <div className="top-img">
-                                <img className="_2tuBw _12_oN" alt="La Pino'z Pizza"
+                                <img className="restaurant_img" alt="La Pino'z Pizza"
                                   src={IMG_CDN_URL + restaurant?.info?.cloudinaryImageId
                                   }
                                   width="254" height="160" />
